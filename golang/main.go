@@ -6,8 +6,15 @@ import (
 )
 
 func main() {
-	//fmt.Println(doSimple())
+	fmt.Println(doSimple())
 	fmt.Println(doComplete())
+	fmt.Println(doEnum())
+}
+
+func doEnum() *pb.Enumeration {
+	return &pb.Enumeration{
+		EyeColor: pb.EyeColor_EYE_COLOR_GREEN,
+	}
 }
 
 func doComplete() *pb.Complex {
