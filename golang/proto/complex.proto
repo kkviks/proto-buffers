@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package example.complex;
+
+option go_package = "example/proto";
+
+message foo{
+  uint32 id = 1;
+  string name = 2;
+}
+
+message Complex{
+  foo one_foo = 1;
+  repeated foo many_foo = 2;
+}

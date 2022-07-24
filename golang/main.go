@@ -1,10 +1,23 @@
 package main
 
-import "fmt"
-import pb "example/proto"
+import (
+	pb "example/proto"
+	"fmt"
+)
 
 func main() {
-	fmt.Println(doSimple())
+	//fmt.Println(doSimple())
+	fmt.Println(doComplete())
+}
+
+func doComplete() *pb.Complex {
+	return &pb.Complex{
+		OneFoo: &pb.Foo{Id: 1, Name: "Vikas"},
+		ManyFoo: []*pb.Foo{
+			{Id: 2, Name: "X"},
+			{Id: 3, Name: "Y"},
+		},
+	}
 }
 
 func doSimple() *pb.Simple {
