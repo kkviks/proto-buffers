@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+/* Money
+  Used to represent money in our system
+ */
+message Money{
+  string currency_code = 1;
+  uint32 integral = 2;
+  float decimal = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+//Used to represent person in our system
+message Person{
+  string firstName = 1;
+  repeated string middleNames = 2;
+  string lastName = 3;
+}

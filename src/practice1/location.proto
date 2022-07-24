@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+/* Location
+  Used to identify the location in our system
+ */
+message Location{
+  double latitude = 1;
+  double longitude = 2;
+}

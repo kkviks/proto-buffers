@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "helpers.proto";
+
+message Building{
+  string name = 1;
+  uint32 number = 2;
+  helpers.Street street = 3;
+}
+
