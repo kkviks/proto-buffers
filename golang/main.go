@@ -11,6 +11,17 @@ func main() {
 	fmt.Println(doEnum())
 	doOneOf(&pb.Result_Id{Id: 1})
 	doOneOf(&pb.Result_Message{Message: "huehuehue"})
+	fmt.Println(doMap())
+}
+
+func doMap() *pb.MapExample {
+	return &pb.MapExample{
+		Ids: map[string]*pb.IdWrapper{
+			"myid":  {Id: 1},
+			"myid2": {Id: 2},
+			"myid3": {Id: 3},
+		},
+	}
 }
 
 func doOneOf(m interface{}) {
