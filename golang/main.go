@@ -3,15 +3,25 @@ package main
 import (
 	pb "example/proto"
 	"fmt"
+	"google.golang.org/protobuf/proto"
 )
 
 func main() {
-	fmt.Println(doSimple())
-	fmt.Println(doComplete())
-	fmt.Println(doEnum())
-	doOneOf(&pb.Result_Id{Id: 1})
-	doOneOf(&pb.Result_Message{Message: "huehuehue"})
-	fmt.Println(doMap())
+	//fmt.Println(doSimple())
+	//fmt.Println(doComplete())
+	//fmt.Println(doEnum())
+	//doOneOf(&pb.Result_Id{Id: 1})
+	//doOneOf(&pb.Result_Message{Message: "huehuehue"})
+	//fmt.Println(doMap())
+	fmt.Println(doFile())
+}
+
+func doFile() proto.Message {
+	filename := "storage.bin"
+	message := &pb.EmailPass{Email: "kkviks@gmail.com", Password: "something-secret"}
+	WriteToFile(filename, message)
+	msg := ReadFromFile(filename, message)
+	return msg
 }
 
 func doMap() *pb.MapExample {
